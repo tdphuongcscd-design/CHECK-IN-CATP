@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khách ra vào trụ sở</title>
+    <!-- Thêm thư viện icon FontAwesome nếu cần -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- 1. HEADER BANNER -->
+    <header class="header-banner">
+        <div class="logo-area">
+            <!-- Thay bằng đường dẫn ảnh logo công an của bạn -->
+            <img src="logo.jpg" alt="Logo Công An" class="police-logo"> 
+            <div class="header-text">
+                <h1>CÔNG AN THÀNH PHỐ HUẾ</h1>
+                <p>Hệ thống Check-in Khách đến & Cán bộ</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-container">
+        
+        <!-- 2. CỘT TRÁI: FORM ĐĂNG KÝ -->
+        <section class="left-column">
+            <div class="page-title">
+                <h2>ĐĂNG KÝ KHÁCH RA VÀO TRỤ SỞ</h2>
+                <p>Vui lòng khai báo đầy đủ và chính xác thông tin</p>
+            </div>
+
+            <form id="formDangKy">
+                
+                <!-- KHỐI THÔNG TIN CÁ NHÂN -->
+                <div class="form-card">
+                    <h3 class="card-title"><i class="fa-regular fa-user"></i> THÔNG TIN CÁ NHÂN</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Họ và tên <span class="required">*</span></label>
+                            <input type="text" name="hoTen" placeholder="Nhập họ và tên" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Số CCCD/CMND/Hộ chiếu <span class="required">*</span></label>
+                            <input type="text" name="cccd" placeholder="Nhập số CCCD/CMND/Hộ chiếu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ngày sinh</label>
+                            <input type="date" name="ngaySinh">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Địa chỉ thường trú <span class="required">*</span></label>
+                            <input type="text" name="diaChi" placeholder="Nhập địa chỉ thường trú" required>
+                        </div>
+                     
+                        <div class="form-group">
+                            <label>Số điện thoại <span class="required">*</span></label>
+                            <input type="tel" name="sdt" placeholder="Nhập số điện thoại" required>
+                        </div>
+   
+                        <div class="form-group">
+                            <label>Biển số xe <span class="required">*</span></label>
+                            <input type="text" name="bienSo" placeholder="nhập biển số xe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Người cần gặp <span class="required">*</span></label>
+                            <input type="text" name="nguoiGap" placeholder="nhập tên/phòng ban cần gặp">
+                        </div>
+
+                        <div class="form-group">
+                            <label> cán bộ tiếp nhận </label>
+                            <input type="text" name="canBoTiep" placeholder="Cán bộ tiếp nhận" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THANH HÀNH ĐỘNG (NÚT BẤM) -->
+                <div class="form-actions">
+                    <a href="index.html" style="text-decoration:none;">
+                    <button type="button" class="btn-secondary"><i class="fa-solid fa-arrow-rotate-left"></i> Quay lại</button>
+                    <a>
+                    <button type="submit" class="btn-primary"><i class="fa-regular fa-id-card"></i> Đăng ký</button>
+                </div>
+ 
+            </form>
+        </section>
+
+        <!-- 3. CỘT PHẢI: HƯỚNG DẪN & LƯU Ý -->
+        <aside class="right-column">
+            
+            <!-- QUY TRÌNH ĐĂNG KÝ -->
+            <div class="sidebar-card info-card">
+                <h4 class="sidebar-title">QUY TRÌNH ĐĂNG KÝ</h4>
+                <div class="step-list">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h5>Khai báo thông tin</h5>
+                            <p>Nhận mã QR, điền đầy đủ thông tin cá nhân cá nhân của bạn vào form.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h5>Xuất trình giấy tờ</h5>
+                            <p>Xuất trình giấy tờ liên quan</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h5>Đối chiếu thông tin tại cổng</h5>
+                            <p>Kiểm tra, đối chiếu thông tin đã khai báo tại trực ban</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LƯU Ý -->
+            <div class="sidebar-card warning-card">
+                <h4 class="sidebar-title warning">LƯU Ý</h4>
+                <ul>
+                    <li>Vui lòng có mặt đúng thời gian đã đăng ký.</li>
+                    <li>Xuất trình CCCD/CMND khi đến trụ sở.</li>
+                    <li>Mã QR chỉ có hiệu lực trong thời gian đã đăng ký.</li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </main>
+<script>
+    // 1. Dán đường link Web App Apps Script bạn vừa copy ở phần 1 vào đây
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxesSyXJLqGoJvCbrVDs277uzP4Ilr1TzoXCem2_DleOxLpJMtiqBNkFkITMkM-an6C/exec";
+
+    const form = document.getElementById('formDangKy');
+    
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Chặn load lại trang
+
+            // Đổi hiệu ứng chữ trên nút bấm
+            const submitBtn = form.querySelector('button[type="submit"]') || document.querySelector('.form-actions button:last-child');
+            let originalBtnText = "Đăng ký";
+            if(submitBtn) {
+                originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = 'Đang lưu dữ liệu...';
+                submitBtn.disabled = true;
+            }
+
+            // 2. GIẢI PHÁP TỰ ĐỘNG: Lấy dữ liệu trực tiếp từ thuộc tính "name" của các ô nhập liệu
+            // (Đảm bảo các ô input trong html của bạn đã có thuộc tính name="hoTen", name="cccd"...)
+            let formData = new FormData(form);
+
+            // Gửi dữ liệu qua Google Sheets
+            fetch(SCRIPT_URL, { 
+                method: 'POST', 
+                body: formData 
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Trả nút bấm về trạng thái cũ
+                if(submitBtn) {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+
+                if (data.status === 'success') {
+                    alert("🎉 Đăng ký thông tin thành công!");
+                    form.reset(); // Xóa sạch form để người sau nhập
+                } else {
+                    alert("❌ Thất bại từ hệ thống: " + data.message);
+                }
+            })
+            .catch(error => {
+                if(submitBtn) {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+                console.error('Lỗi kết nối!', error);
+                alert("❌ Lỗi kết nối! Vui lòng kiểm tra lại URL Apps Script hoặc quyền truy cập 'Anyone'.");
+            });
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin liên hệ</title>
+    <!-- Thêm thư viện icon FontAwesome nếu cần -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <style>   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* 1. HEADER BANNER */
+.header-banner {
+    background-color: #0b4a23; /* Màu xanh lá Công an phố Huế */
+    color: #ffffff;
+    padding: 15px 40px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.police-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-text h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header-text p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* BỐ CỤC CHÍNH CHIA 2 CỘT */
+.main-container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2.8fr 1.2fr; /* Tỉ lệ giữa cột form và cột hướng dẫn */
+    gap: 30px;
+}
+.page-title {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.page-title h2 {
+    color: #0b4a23;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+/* TIÊU ĐỀ TRANG CHÍNH */
+table {
+     width: 60%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif
+}
+th, td {
+    border: 2px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+th{
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover {
+    background-color: #ddd;}
+    
+/* FORM VÀ CARD CHỨA */
+.form-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    color: #0b4a23;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.card-title i {
+    margin-right: 8px;
+}
+
+/* LƯỚI GRID CHO CÁC Ô NHẬP LIỆU */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia đều 3 ô trên 1 dòng */
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 3; /* Ô Địa chỉ chiếm trọn dòng */
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.required {
+    color: #d93025;
+}
+
+/* INPUT VÀ SELECT */
+input, select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #0b4a23;
+    box-shadow: 0 0 0 2px rgba(11, 74, 35, 0.1);
+}
+
+/* NÚT ĐIỀU HƯỚNG BÊN DƯỚI */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-secondary {
+    background-color: #0b4a23;
+    color: #dadce0;
+    border: 2px solid #dadce0;
+}
+
+.btn-secondary:hover {
+    background-color: #073318;
+    .btn-secondary: :hover {transform: translate: (-2px);;}
+}
+
+.btn-primary {
+    background-color: #0b4a23;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #073318;
+}
+
+/* 3. CỘT SIDEBAR BÊN PHẢI */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.info-card {
+    border-top: 4px solid #e6f4ea;
+}
+
+.sidebar-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #137333;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Khối từng bước quy trình */
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: #1a73e8;
+    color: white;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h5 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.step-content p {
+    font-size: 0.85rem;
+    color: #5f6368;
+    line-height: 1.4;
+}
+
+/* Khối Lưu ý màu vàng cam nhạt */
+.warning-card {
+    background-color: #fef7e0;
+    border: 1px solid #feefc3;
+}
+
+.sidebar-title.warning {
+    color: #b06000;
+}
+
+.warning-card ul {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.warning-card li {
+    font-size: 0.85rem;
+    color: #3c4043;
+    line-height: 1.4;
+}
+
+/* ĐÁP ỨNG GIAO DIỆN DI ĐỘNG (RESPONSIVE) */
+@media (max-width: 992px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form-group.full-width {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER BANNER -->
+    <header class="header-banner">
+        <div class="logo-area">
+            <!-- Thay bằng đường dẫn ảnh logo công an của bạn -->
+            <img src="logo.jpg" alt="Logo Công An" class="police-logo"> 
+            <div class="header-text">
+                <h1>CÔNG AN THÀNH PHỐ HUẾ</h1>
+                <p>Thông tin liên hệ Công an thành phố Huế</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!cột giữa form thông tin>
+        <section class="center">
+            <div class="page-title">
+                <h2> Địa chỉ Công an thành phố Huế</h2>
+            </div>
+            <table id="tablelienhe">
+                <tr>
+                    <th>STT</th>
+                    <th>Đơn vị</th>
+                    <th>Địa chỉ</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>TRỤ SỞ CHÍNH CÔNG AN THÀNH PHỐ HUẾ</td>
+                    <td> <a href="https://maps.app.goo.gl/TSugpd5uTd6DURNT7"  target="_blank">
+                            Lô E, Võ Chí Công, phường Vỹ Dạ, thành phố Huế </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CƠ QUAN AN NINH ĐIỀU TRA VÀ VĂN PHÒNG CƠ QUAN CẢNH SÁT ĐIỀU TRA</td>
+                    <td>02 Nguyễn Thái Học, phường Thuận Hóa, thành phố Huế</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> TRUNG TÂM TIẾP CÔNG DÂN CÔNG AN THÀNH PHỐ</td>
+                    <td> 56 Hùng Vương, phường Thuận Hoá, thành phố Huế</td>
+                </tr>
+
+            </form>
+    </main>
